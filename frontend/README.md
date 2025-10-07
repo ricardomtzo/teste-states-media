@@ -1,5 +1,7 @@
 # Sistema de Vídeo e Ofertas
 
+link de produção: https://teste-states-media-lwrlfi1cv-ricardos-projects-63b6ee84.vercel.app/
+
 Este projeto é um frontend em React + Vite que reproduz um layout inspirado no YouTube com:
 - Player de vídeo integrado via ConverteAI VTurb
 - Informações do vídeo com overlay em bottom sheet no mobile
