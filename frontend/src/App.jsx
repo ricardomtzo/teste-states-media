@@ -24,7 +24,7 @@ export default function App() {
         <div className="">
           <section className="mt-0">
             <VideoPlayer />
-            <div className='px-2'>
+            <div className='px-3'>
               <VideoInfo />
               <Suspense fallback={<div className="mt-4">Loading comments...</div>}>
                 <Comments />

@@ -10,7 +10,7 @@ export default function Header({ onMenuClick }) {
         {/* Esquerda: menu + logo */}
         <div className="flex items-center gap-3">
           {/* Menu escondido no mobile; mantém no desktop para layout tipo YouTube */}
-          <button className="md:flex h-9 w-9 items-center justify-center bg-transparent border-none hover:bg-gray-100 " aria-label="Menu" onClick={onMenuClick}>
+          <button className="max-sm:hidden md:flex h-9 w-9 items-center justify-center bg-transparent border-none hover:bg-gray-100 " aria-label="Menu" onClick={onMenuClick}>
             <FaBars size={18} aria-hidden="true" />
           </button>
           <a href="#" className="flex items-center gap-2" aria-label="YouTube Home">
