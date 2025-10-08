@@ -1,0 +1,78 @@
+{
+  "info": {
+    "_postman_id": "b7f3c7d5-75b8-48c2-9f3a-9a67b5e6f56c",
+    "name": "CRM API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "gpt5"
+  },
+  "item": [
+    {
+      "name": "Leads",
+      "item": [
+        {
+          "name": "Criar Lead",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Authorization",
+                "value": "Bearer {{token}}",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao@email.com\",\n  \"telefone\": \"11999999999\",\n  \"kit_interesse\": \"1|3|5\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/leads",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "leads"
+              ]
+            },
+            "description": "Cria um novo lead no sistema CRM."
+          },
+          "response": [],
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Status code é 201\", function () {",
+                  "    pm.response.to.have.status(201);",
+                  "});",
+                  "",
+                  "pm.test(\"Lead criado com sucesso\", function () {",
+                  "    const res = pm.response.json();",
+                  "    pm.expect(res).to.have.property(\"id\");",
+                  "    pm.expect(res.nome).to.eql(\"João Silva\");",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000"
+    },
+    {
+      "key": "token",
+      "value": ""
+    }
+  ]
+}
